@@ -1,0 +1,106 @@
+/* General Reset */
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevents page from scrolling */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes logout to bottom */
+}
+
+/* Sidebar Collapsed */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar .toggle-btn {
+  text-align: center;
+  padding: 10px;
+  background-color: #212529;
+  cursor: pointer;
+}
+
+/* Sidebar Navigation Links */
+.sidebar .nav {
+  flex-grow: 1;
+}
+
+.sidebar .nav-link {
+  color: white;
+  padding: 25px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Sidebar Icons */
+.sidebar .nav-link i {
+  margin-right: 10px;
+  transition: margin-right 0.3s ease;
+}
+
+/* Sidebar Hover Effect */
+.sidebar .nav-link:hover {
+  background-color: #495057;
+}
+
+/* Hide Text Completely When Collapsed */
+.sidebar.collapsed .nav-link span {
+  display: none;
+}
+
+/* Adjust Icon Spacing When Collapsed */
+.sidebar.collapsed .nav-link i {
+  margin-right: 0;
+}
+
+/* Content Area */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  transition: margin-left 0.3s ease;
+}
+
+/* Content Adjusts When Sidebar is Collapsed */
+.content.expanded {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* ✅ Logout Button (No Background, Only Hover) */
+.sidebar .logout-btn {
+  margin-top: auto; /* Push to bottom */
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: none; /* Remove default background */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light border at top */
+}
+
+/* Hover Effect */
+.sidebar .logout-btn:hover {
+  background-color: #c50000;
+  color: white;
+}
