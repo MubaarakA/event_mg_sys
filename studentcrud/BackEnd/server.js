@@ -19,6 +19,13 @@ const authRoutes = require("./middleware/auth");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
+
+
+const cors = require("cors");
+app.use(cors({ origin: "https://event-mg-sys-git-master-mubaraks-projects-15463fd0.vercel.app/", credentials: true }));
+
 // ✅ Passport Config
 require("./db/passport")(passport);
 
