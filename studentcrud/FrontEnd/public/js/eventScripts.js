@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:3000/events/api");
+        const response = await fetch("https://eventmanagement-chi-swart.vercel.app/events/api");
         const events = await response.json();
         console.log("Fetched Events:", events);
         const eventsTable = document.getElementById("eventsTable");

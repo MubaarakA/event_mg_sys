@@ -15,6 +15,16 @@ const authRoutes = require("./middleware/auth"); // ✅ Correctly require auth.j
 const app = express();
 const PORT = 3000;
 
+
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://your-frontend.vercel.app", // ✅ Allow only your frontend
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
+
 // ✅ Passport Config
 require("./db/passport")(passport);
 
